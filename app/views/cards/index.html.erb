@@ -1,0 +1,10 @@
+<h1>Cards</h1>
+
+<% @cards.each do |card| %>
+  <li>
+    <%= link_to(card.name, card_path(card)) %>
+  </li>
+  <li>
+    <%= card.mana_cost %>
+  </li>
+<% end %>
