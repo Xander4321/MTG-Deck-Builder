@@ -46,7 +46,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.4)
-    capybara (2.6.2)
+    capybara (2.7.0)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -73,12 +73,12 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.6.0)
-    factory_girl (4.5.0)
+    factory_girl (4.7.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.6.0)
-      factory_girl (~> 4.5.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    foundation-rails (6.2.0.1)
+    foundation-rails (6.2.1.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
@@ -214,11 +214,8 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   coveralls
-<<<<<<< HEAD
   factory_girl_rails
-=======
   foundation-rails
->>>>>>> a3a3215036f9e3dc19b9e3714b0ea75345695021
   jbuilder (~> 2.0)
   jquery-rails
   pg
