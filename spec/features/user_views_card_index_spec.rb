@@ -8,7 +8,7 @@ feature "User visits card index page" do
     mana_cost: "0",
     cmc: 0,
     rarity: "Rare"
-    )}
+  )}
 
   let!(:timewalk) {Card.create(
     name: "Time Walk",

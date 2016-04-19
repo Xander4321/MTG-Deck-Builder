@@ -10,7 +10,7 @@ feature "User visits card show page" do
     rarity: "Rare",
     rules_text: "{T}, Sacrifice Black Lotus: Add three mana of any one color to your mana pool.",
     image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382866&type=card"
-    )}
+  )}
 
   scenario "sees cards details" do
     visit cards_path
