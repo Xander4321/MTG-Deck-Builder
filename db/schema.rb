@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160417160047) do
     t.integer "power"
     t.integer "toughness"
     t.integer "loyalty"
-    t.integer "artist_id_id"
+    t.integer "artist_id"
     t.integer "number"
     t.text    "image"
   end

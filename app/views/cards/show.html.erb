@@ -1,0 +1,18 @@
+  <h1>card.name</h1>
+  <li>
+    Casting Cost:
+    <%= @card.mana_cost %>
+  </li>
+  <li>
+    Color Identity:
+    <%= @card.color_identity %>
+  </li>
+  <li>
+    Rarity:
+    <%= @card.rarity %>
+  </li>
+  <li>
+    Rules Text:
+    <%= @card.rules_text %>
+  </li>
+  <%= image_tag("#{@card.image}") %>

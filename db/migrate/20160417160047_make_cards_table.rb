@@ -11,7 +11,7 @@ class MakeCardsTable < ActiveRecord::Migration
       t.integer :power
       t.integer :toughness
       t.integer :loyalty
-      t.belongs_to :artist_id
+      t.belongs_to :artist
       t.integer :number
       t.text :image
     end
