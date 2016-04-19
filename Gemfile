@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', '~> 2.0', group: :development
 
+gem 'coveralls', require: false, group: :test
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
