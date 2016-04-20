@@ -2,6 +2,8 @@ require 'rails_helper'
 require 'pry'
 
 feature "User visits card show page" do
+  let!(:type) { Type.create(typname: "Artifact") }
+
   let!(:lotus) {Card.create(
     name: "Black Lotus",
     color_identity: "Colorless",
@@ -9,7 +11,8 @@ feature "User visits card show page" do
     cmc: 0,
     rarity: "Rare",
     rules_text: "{T}, Sacrifice Black Lotus: Add three mana of any one color to your mana pool.",
-    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382866&type=card"
+    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382866&type=card",
+    type_id: type.id
   )}
 
   scenario "sees cards details" do
@@ -23,5 +26,6 @@ feature "User visits card show page" do
     expect(page).to have_content "Rarity: Rare"
     expect(page).to have_content "Rules Text: {T}, Sacrifice Black Lotus: Add three mana of any one color to your mana pool."
     expect(page).to have_selector "img[src$='#{lotus.image}']"
+    expect(page).to have_content "Type: Artifact"
   end
 end
