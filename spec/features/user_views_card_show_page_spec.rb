@@ -18,6 +18,7 @@ feature "User visits card show page" do
     cmc: 0,
     rarity: "Rare",
     rules_text: "{T}, Sacrifice Black Lotus: Add three mana of any one color to your mana pool.",
+    flavor_text: "Power that transcends Legend.",
     image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382866&type=card",
     supertype: supertype,
     type: type,
@@ -43,5 +44,6 @@ feature "User visits card show page" do
     expect(page).to have_content "Set: Vintage Masters"
     expect(page).to have_selector "img[src$='#{expantion.symbol}']"
     expect(page).to have_content "Card Number: 4/325"
+    expect(page).to have_content "Flavor Text: Power that transcends Legend."
   end
 end
