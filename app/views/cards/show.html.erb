@@ -1,7 +1,9 @@
 <li>
   <%= image_tag("#{@card.image}") %>
 </li>
-<h1>card.name</h1>
+
+<h1> <%= @card.name %> </h1>
+
 <li>
   Type:
   <%= @card.supertype.sptypname %>
@@ -9,22 +11,38 @@
   -
   <%= @card.subtype.sbtypname %>
 </li>
+
 <li>
   Casting Cost:
   <%= @card.mana_cost %>
 </li>
+
 <li>
   Color Identity:
   <%= @card.color_identity %>
 </li>
+
 <li>
   Rarity:
   <%= @card.rarity %>
 </li>
+
 <li>
   Rules Text:
   <%= @card.rules_text %>
 </li>
+
+<li>
+  Set:
+  <%= @card.expantion.name %>
+  <%= image_tag("#{@card.expantion.symbol}") %>
+</li>
+
+<li>
+  Card Number:
+  <%= @card.number %>/<%= @card.expantion.total %>
+</li>
+
 <li>
   Artist:
   <%= @card.artist.name %>
