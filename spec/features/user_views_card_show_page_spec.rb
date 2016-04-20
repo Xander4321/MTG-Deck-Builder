@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'pry'
 
 feature "User visits card show page" do
-  let!(:type) {Type.create(typname: "Artifact")}
+  let!(:type) { Type.create(typname: "Artifact") }
 
   let!(:lotus) {Card.create(
     name: "Black Lotus",
