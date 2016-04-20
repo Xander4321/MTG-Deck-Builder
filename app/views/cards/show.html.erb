@@ -1,7 +1,10 @@
   <h1>card.name</h1>
   <li>
     Type:
+    <%= @card.supertype.sptypname %>
     <%= @card.type.typname %>
+    -
+    <%= @card.subtype.sbtypname %>
   </li>
   <li>
     Casting Cost:

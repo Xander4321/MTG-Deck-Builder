@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420133452) do
+ActiveRecord::Schema.define(version: 20160420162524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20160420133452) do
     t.integer "number"
     t.text    "image"
     t.integer "type_id"
+    t.integer "supertype_id"
+    t.integer "subtype_id"
+  end
+
+  create_table "subtypes", force: :cascade do |t|
+    t.string "sbtypname"
+  end
+
+  create_table "supertypes", force: :cascade do |t|
+    t.string "sptypname"
   end
 
   create_table "types", force: :cascade do |t|
