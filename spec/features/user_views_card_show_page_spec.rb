@@ -5,6 +5,7 @@ feature "User visits card show page" do
   let!(:supertype) { Supertype.create(sptypname: "Legendary") }
   let!(:type) { Type.create(typname: "Artifact") }
   let!(:subtype) { Subtype.create(sbtypname: "Flower") }
+  let!(:artist) { Artist.create(name: "Chris Rahn", gender: "Male") }
 
   let!(:lotus) {Card.create(
     name: "Black Lotus",
@@ -16,7 +17,8 @@ feature "User visits card show page" do
     image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382866&type=card",
     supertype: supertype,
     type: type,
-    subtype: subtype
+    subtype: subtype,
+    artist: artist
   )}
 
   scenario "sees cards details" do
@@ -31,5 +33,6 @@ feature "User visits card show page" do
     expect(page).to have_content "Rules Text: {T}, Sacrifice Black Lotus: Add three mana of any one color to your mana pool."
     expect(page).to have_selector "img[src$='#{lotus.image}']"
     expect(page).to have_content "Type: Legendary Artifact - Flower"
+    expect(page).to have_content "Artist: Chris Rahn"
   end
 end

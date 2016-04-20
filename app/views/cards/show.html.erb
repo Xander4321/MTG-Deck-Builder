@@ -1,25 +1,31 @@
-  <h1>card.name</h1>
-  <li>
-    Type:
-    <%= @card.supertype.sptypname %>
-    <%= @card.type.typname %>
-    -
-    <%= @card.subtype.sbtypname %>
-  </li>
-  <li>
-    Casting Cost:
-    <%= @card.mana_cost %>
-  </li>
-  <li>
-    Color Identity:
-    <%= @card.color_identity %>
-  </li>
-  <li>
-    Rarity:
-    <%= @card.rarity %>
-  </li>
-  <li>
-    Rules Text:
-    <%= @card.rules_text %>
-  </li>
+<li>
   <%= image_tag("#{@card.image}") %>
+</li>
+<h1>card.name</h1>
+<li>
+  Type:
+  <%= @card.supertype.sptypname %>
+  <%= @card.type.typname %>
+  -
+  <%= @card.subtype.sbtypname %>
+</li>
+<li>
+  Casting Cost:
+  <%= @card.mana_cost %>
+</li>
+<li>
+  Color Identity:
+  <%= @card.color_identity %>
+</li>
+<li>
+  Rarity:
+  <%= @card.rarity %>
+</li>
+<li>
+  Rules Text:
+  <%= @card.rules_text %>
+</li>
+<li>
+  Artist:
+  <%= @card.artist.name %>
+</li>
