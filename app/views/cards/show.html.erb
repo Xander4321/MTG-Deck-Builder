@@ -19,8 +19,9 @@
 </li>
 
 <li>
-  Casting Cost:
+  Casting Cost (CMC):
   <%= @card.mana_cost %>
+  (<%= @card.cmc %>)
 </li>
 
 <li>
@@ -47,10 +48,24 @@
   </li>
 <% end %>
 
+<% if !@card.power.nil? && !@card.toughness.nil? %>
+  <li>
+    Power/Toughness:
+    <%= @card.power %>/<%= @card.toughness %>
+  </li>
+<% end %>
+
+<% if !@card.loyalty.nil? %>
+  <li>
+    Loyalty:
+    <%= @card.loyalty %>
+  </li>
+<% end %>
+
 <li>
   Set:
   <%= @card.expantion.name %>
-  <%= image_tag("#{@card.expantion.symbol}") %>
+  <%= image_tag("#{@card.expantion.symbol}", height: '35', width: '35') %>
 </li>
 
 <li>

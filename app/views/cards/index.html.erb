@@ -1,8 +1,56 @@
+<div class="row">
+
 <h1>Cards</h1>
 
-<% @cards.each do |card| %>
-  <li>
-    <%= link_to(card.name, card_path(card)) %>
-    <%= card.mana_cost %>
-  </li>
-<% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Thumbnail</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Color Identity</th>
+        <th>Mana Cost (CMC)</th>
+        <th>PowTuf/Loyalty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cards.each do |card| %>
+      <tr>
+        <td>
+          <%= image_tag("#{card.image}", height: '50', width: '50') %>
+        </td>
+        <td>
+          <%= link_to(card.name, card_path(card)) %>
+        </td>
+        <td>
+          <% if !card.supertype.nil? %>
+            <%= card.supertype.sptypname %>
+          <% end %>
+
+          <%= card.type.typname %>
+
+          <% if !card.subtype.nil? %>
+            -
+            <%= card.subtype.sbtypname %>
+          <% end %>
+        </td>
+        <td>
+          <%= card.color_identity %>
+        </td>
+        <td>
+          <%= card.mana_cost %>
+          (<%= card.cmc %>)
+        </td>
+        <td>
+          <% if !card.power.nil? && !card.toughness.nil? %>
+            <%= card.power %>/<%= card.toughness %>
+          <% end %>
+          <% if !card.loyalty.nil? %>
+            <%= card.loyalty %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
