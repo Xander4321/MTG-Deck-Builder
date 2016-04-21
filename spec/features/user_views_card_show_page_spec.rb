@@ -4,6 +4,7 @@ feature "User visits card show page" do
   let!(:supertype) { Supertype.create(sptypname: "Legendary") }
   let!(:type) { Type.create(typname: "Artifact") }
   let!(:subtype) { Subtype.create(sbtypname: "Flower") }
+  let!(:rarity) { Rarity.create(value: "Rare") }
   let!(:artist) { Artist.create(name: "Chris Rahn", gender: "Male") }
   let!(:expantion) { Expantion.create(
     name: "Vintage Masters",
@@ -16,8 +17,9 @@ feature "User visits card show page" do
     color_identity: "Colorless",
     mana_cost: "0",
     cmc: 0,
-    rarity: "Rare",
+    rarity: rarity,
     rules_text: "{T}, Sacrifice Black Lotus: Add three mana of any one color to your mana pool.",
+    flavor_text: "Power that transcends Legend.",
     image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382866&type=card",
     supertype: supertype,
     type: type,
@@ -43,5 +45,6 @@ feature "User visits card show page" do
     expect(page).to have_content "Set: Vintage Masters"
     expect(page).to have_selector "img[src$='#{expantion.symbol}']"
     expect(page).to have_content "Card Number: 4/325"
+    expect(page).to have_content "Flavor Text: Power that transcends Legend."
   end
 end
