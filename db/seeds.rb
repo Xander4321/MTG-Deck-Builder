@@ -69,6 +69,16 @@ rarities = Rarity.create([
   { value: "Mythic Rare" },
 ])
 
+formats = Deckstyle.create([
+  { name: "Standard", cardlmt: 60 },
+  { name: "Modern", cardlmt: 60 },
+  { name: "Legacy", cardlmt: 60 },
+  { name: "Vintage", cardlmt: 60 },
+  { name: "Pauper", cardlmt: 60 },
+  { name: "Commander/EDH", cardlmt: 100 },
+  { name: "Highlander", cardlmt: 100 }
+])
+
 Card.create(
   name: "Black Lotus",
   color_identity: "Colorless",
@@ -124,4 +134,9 @@ Card.create(
   artist: artists[2],
   expantion: expantions[2],
   number: 209
+)
+
+Deck.create(
+  name: "Mill it All!",
+  deckstyle: formats[5]
 )
