@@ -6,10 +6,16 @@
 
 <li>
   Type:
-  <%= @card.supertype.sptypname %>
+  <% if !@card.supertype.nil? %>
+    <%= @card.supertype.sptypname %>
+  <% end %>
+
   <%= @card.type.typname %>
-  -
-  <%= @card.subtype.sbtypname %>
+
+  <% if !@card.subtype.nil? %>
+    -
+    <%= @card.subtype.sbtypname %>
+  <% end %>
 </li>
 
 <li>
@@ -24,18 +30,22 @@
 
 <li>
   Rarity:
-  <%= @card.rarity %>
+  <%= @card.rarity.value %>
 </li>
 
-<li>
-  Rules Text:
-  <%= @card.rules_text %>
-</li>
+<% if !@card.rules_text.nil? %>
+  <li>
+    Rules Text:
+    <%= @card.rules_text %>
+  </li>
+<% end %>
 
-<li>
-  Flavor Text:
-  <%= @card.flavor_text %>
-</li>
+<% if !@card.flavor_text.nil? %>
+  <li>
+    Flavor Text:
+    <%= @card.flavor_text %>
+  </li>
+<% end %>
 
 <li>
   Set:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420183922) do
+ActiveRecord::Schema.define(version: 20160420235641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160420183922) do
     t.string  "color_identity", null: false
     t.string  "mana_cost"
     t.integer "cmc",            null: false
-    t.string  "rarity",         null: false
     t.text    "rules_text"
     t.text    "flavor_text"
     t.integer "power"
@@ -40,12 +39,17 @@ ActiveRecord::Schema.define(version: 20160420183922) do
     t.integer "supertype_id"
     t.integer "subtype_id"
     t.integer "expantion_id"
+    t.integer "rarity_id"
   end
 
   create_table "expantions", force: :cascade do |t|
     t.string  "name",   null: false
     t.text    "symbol"
     t.integer "total"
+  end
+
+  create_table "rarities", force: :cascade do |t|
+    t.string "value"
   end
 
   create_table "subtypes", force: :cascade do |t|

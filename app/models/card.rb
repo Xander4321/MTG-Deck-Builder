@@ -4,4 +4,5 @@ class Card < ActiveRecord::Base
   belongs_to :subtype
   belongs_to :artist
   belongs_to :expantion
+  belongs_to :rarity
 end

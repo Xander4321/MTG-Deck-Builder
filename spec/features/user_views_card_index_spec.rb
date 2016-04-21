@@ -7,7 +7,6 @@ feature "User visits card index page" do
     color_identity: "Colorless",
     mana_cost: "0",
     cmc: 0,
-    rarity: "Rare"
   )}
 
   let!(:timewalk) {Card.create(
@@ -15,7 +14,6 @@ feature "User visits card index page" do
     color_identity: "Blue",
     mana_cost: "BB",
     cmc: 2,
-    rarity: "Rare"
     )}
 
   scenario "sees list of cards" do
