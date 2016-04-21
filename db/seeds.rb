@@ -7,53 +7,53 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 supertypes = Supertype.create([
-  { sptypname: "Legendary" },
-  { sptypname: "Basic" },
-  { sptypname: "Ongoing" },
-  { sptypname: "Snow" },
-  { sptypname: "World" }
+    { sptypname: "Legendary" },
+    { sptypname: "Basic" },
+    { sptypname: "Ongoing" },
+    { sptypname: "Snow" },
+    { sptypname: "World" }
 ])
 
 types = Type.create([
-  { typname: "Artifact" },
-  { typname: "Creature" },
-  { typname: "Enchantment" },
-  { typname: "Instant" },
-  { typname: "Land" },
-  { typname: "Planeswalker" },
-  { typname: "Sorcery" },
-  { typname: "Tribal" },
-  { typname: "Artifact Creature" },
-  { typname: "Enchantment Creature" }
+    { typname: "Artifact" },
+    { typname: "Creature" },
+    { typname: "Enchantment" },
+    { typname: "Instant" },
+    { typname: "Land" },
+    { typname: "Planeswalker" },
+    { typname: "Sorcery" },
+    { typname: "Tribal" },
+    { typname: "Artifact Creature" },
+    { typname: "Enchantment Creature" }
 ])
 
 subtypes = Subtype.create([
-  { sbtypname: "Zombie" },
-  { sbtypname: "Vampire" },
-  { sbtypname: "Dragon" },
-  { sbtypname: "Goblin" },
-  { sbtypname: "Elf" },
-  { sbtypname: "Werewolf" },
-  { sbtypname: "Human" },
-  { sbtypname: "Eldrazi" },
-  { sbtypname: "Plains" },
-  { sbtypname: "Island" },
-  { sbtypname: "Swamp" },
-  { sbtypname: "Mountain" },
-  { sbtypname: "Forest" },
-  { sbtypname: "Xenagos" }
+    { sbtypname: "Zombie" },
+    { sbtypname: "Vampire" },
+    { sbtypname: "Dragon" },
+    { sbtypname: "Goblin" },
+    { sbtypname: "Elf" },
+    { sbtypname: "Werewolf" },
+    { sbtypname: "Human" },
+    { sbtypname: "Eldrazi" },
+    { sbtypname: "Plains" },
+    { sbtypname: "Island" },
+    { sbtypname: "Swamp" },
+    { sbtypname: "Mountain" },
+    { sbtypname: "Forest" },
+    { sbtypname: "Xenagos" }
 ])
 
 artists = Artist.create([
-  { name: "Chris Rahn", gender: "Male" },
-  { name: "Aleksi Briclot", gender: "Male" },
-  { name: "Jason Chan", gender: "Male" }
+    { name: "Chris Rahn", gender: "Male" },
+    { name: "Aleksi Briclot", gender: "Male" },
+    { name: "Jason Chan", gender: "Male" }
 ])
 
 expantions = Expantion.create([
   { name: "Vintage Masters",
-  symbol: "http://www.spllbk.com/assets/symbol/set/vma/c-6d1ef3b0f14cc7303384465017de6907.svg",
-  total: 325 },
+    symbol: "http://www.spllbk.com/assets/symbol/set/vma/c-6d1ef3b0f14cc7303384465017de6907.svg",
+    total: 325 },
   { name: "Oath of the Gatewatch",
   symbol: "http://media.wizards.com/2015/images/daily/D5np80NlZx.png",
   total: 186 },
