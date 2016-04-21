@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "MTG-Deck_Builder" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -12,6 +12,23 @@
   </head>
 
   <body>
+    <div class="top-bar">
+      <div class ="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">
+            <%= link_to("MTG Deck Builder", root_path) %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li class="menu-text">
+            <%= link_to("Cards", cards_path) %>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <%= yield %>
 

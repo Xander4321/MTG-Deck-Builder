@@ -35,7 +35,7 @@ feature "User visits card show page" do
     click_on 'Black Lotus'
 
     expect(page).to have_content("Black Lotus", count: 2)
-    expect(page).to have_content "Casting Cost: 0"
+    expect(page).to have_content "Casting Cost (CMC): 0 (0)"
     expect(page).to have_content "Color Identity: Colorless"
     expect(page).to have_content "Rarity: Rare"
     expect(page).to have_content "Rules Text: {T}, Sacrifice Black Lotus: Add three mana of any one color to your mana pool."
