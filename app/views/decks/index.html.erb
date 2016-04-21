@@ -1,0 +1,33 @@
+<div class="row">
+
+  <h1>Decks</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Format</th>
+        <th>Color(s)</th>
+        <th>Card Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @decks.each do |deck| %>
+      <tr>
+        <td>
+          <%= link_to(deck.name, deck_path(deck)) %>
+        </td>
+        <td>
+          <%= deck.deckstyle.name %>
+        </td>
+        <td>
+          Color of deck goes here.
+        </td>
+        <td>
+          /<%= deck.deckstyle.cardlmt %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

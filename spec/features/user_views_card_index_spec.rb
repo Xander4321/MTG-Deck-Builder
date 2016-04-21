@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 
 feature "User visits card index page" do
   let!(:type) { Type.create(typname: "Artifact") }
