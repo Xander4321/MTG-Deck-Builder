@@ -20,6 +20,6 @@ feature "User visits the deck index" do
     expect(page).to have_content "Format"
     expect(page).to have_content "Standard"
     expect(page).to have_content "Card Total"
-    expect(page).to have_content "/60"
+    expect(page).to have_content "0/60"
   end
 end

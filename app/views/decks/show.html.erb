@@ -1,0 +1,80 @@
+<div class="row">
+
+  <h1>
+    <%= @deck.name %>
+  </h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Thumbnail</th>
+        <th>Name</th>
+        <th>Mana Cost(CMC)</th>
+        <th>Color Identity</th>
+        <th>Type</th>
+        <th>Rarity</th>
+        <th>Set</th>
+        <th>Rules Text</th>
+        <th>PowTuf/Loyalty</th>
+        <th>Card #</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cards.each do |card| %>
+      <tr>
+        <td>
+          <%= card.num_of %>x
+        </td>
+        <td>
+          <%= image_tag("#{card.image}", height: '50', width: '50') %>
+        </td>
+        <td>
+          <%= link_to(card.name, card_path(card)) %>
+        </td>
+        <td>
+          <%= card.mana_cost %>(<%= card.cmc %>)
+        </td>
+        <td>
+          <%= card.color_identity %>
+        </td>
+        <td>
+          <% if !card.supertype.nil? %>
+          <%= card.supertype.sptypname %>
+          <% end %>
+
+          <%= card.type.typname %>
+
+          <% if !card.subtype.nil? %>
+          -
+          <%= card.subtype.sbtypname %>
+          <% end %>
+        </td>
+        <td>
+          <%= card.rarity.value %>
+        </td>
+        <td>
+          <%= card.expantion.name %>
+          <%= image_tag("#{card.expantion.symbol}", height: '35', width: '35') %>
+        </td>
+        <td>
+          <% unless card.rules_text.nil? %>
+              <%= card.rules_text %>
+          <% end %>
+        </td>
+        <td>
+          <%= card.number %>/<%= card.expantion.total %>
+        </td>
+        <td>
+          <% if !card.power.nil? && !card.toughness.nil? %>
+            <%= card.power %>/<%= card.toughness %>
+          <% end %>
+          <% if !card.loyalty.nil? %>
+            <%= card.loyalty %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
