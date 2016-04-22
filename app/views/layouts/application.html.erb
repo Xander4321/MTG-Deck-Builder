@@ -4,7 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "MTG-Deck_Builder" %></title>
+    <link rel="icon" type="image/png" href="http://img08.deviantart.net/cf8d/i/2011/170/6/b/magic_the_gathering_dotp_2012_by_jenack-d3jcych.png" />
+    
+    <title>
+      <%= content_for?(:title) ? yield(:title) : "MTG-Deck_Builder" %>
+    </title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
