@@ -14,11 +14,18 @@ class DecksController < ApplicationController
     @deck = Deck.new(deck_params)
     if @deck.save
       flash[:notice] = "Deck added successfully!"
-      redirect_to decks_path 
     else
       flash[:error] = "Deck not added successfully! #{@deck.errors.full_messages.join ', '}."
-      render :index
     end
+    redirect_to decks_path
+  end
+
+  def destroy
+    deck
+    if @deck.destroy
+      flash[:notice] = "Deck Deleted Successfully"
+    end
+    redirect_to decks_path
   end
 
   private
