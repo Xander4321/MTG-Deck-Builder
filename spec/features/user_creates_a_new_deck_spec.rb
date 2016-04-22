@@ -19,15 +19,11 @@ feature "User visits decks path" do
     expect(page).to have_content 'This is a Deck'
   end
 
-  scenario "creates a new deck successfully" do
+  scenario "creates a new deck unsuccessfully" do
     visit decks_path
-
-    fill_in 'Name', with: 'This is a Deck'
-    select 'Commander/EDH', from: 'Format'
 
     click_on 'Add New Deck'
 
-    expect(page).to have_content('Decks', count: 2)
-    expect(page).to have_content 'This is a Deck'
+    expect(page).to have_content 'Deck not added successfully! Name can\'t be blank.'
   end
 end

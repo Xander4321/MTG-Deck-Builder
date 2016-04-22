@@ -26,6 +26,9 @@
         <td>
           <%= deck.cards.count %>/<%= deck.deckstyle.cardlmt %>
         </td>
+        <td>
+          <%= button_to "Delete", deck_path(deck), class:"button", method:"delete" %>
+        </td>
       </tr>
       <% end %>
     </tbody>
