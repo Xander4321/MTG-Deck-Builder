@@ -63,15 +63,15 @@
           <% end %>
         </td>
         <td>
-          <%= card.number %>/<%= card.expantion.total %>
-        </td>
-        <td>
           <% if !card.power.nil? && !card.toughness.nil? %>
             <%= card.power %>/<%= card.toughness %>
           <% end %>
           <% if !card.loyalty.nil? %>
             <%= card.loyalty %>
           <% end %>
+        </td>
+        <td>
+          <%= card.number %>/<%= card.expantion.total %>
         </td>
       </tr>
       <% end %>
