@@ -13,7 +13,7 @@ feature "User visits decks path" do
     fill_in 'Name', with: 'This is a Deck'
     select 'Commander/EDH', from: 'Format'
 
-    click_on 'Add New Deck'
+    click_on 'Submit'
 
     expect(page).to have_content 'Decks'
     expect(page).to have_content 'This is a Deck'
@@ -22,7 +22,7 @@ feature "User visits decks path" do
   scenario "creates a new deck unsuccessfully" do
     visit decks_path
 
-    click_on 'Add New Deck'
+    click_on 'Submit'
 
     expect(page).to have_content 'Deck not added successfully! Name can\'t be blank.'
   end
