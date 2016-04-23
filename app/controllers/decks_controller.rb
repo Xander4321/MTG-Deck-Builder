@@ -28,6 +28,21 @@ class DecksController < ApplicationController
     redirect_to decks_path
   end
 
+  def edit
+    @deck = Deck.find(params[:id])
+    @deckstyle = Deckstyle.all
+  end
+
+  def update
+    deck
+    if @deck.update(deck_params)
+      flash[:notice] = "Deck updated successfully!"
+    else
+      flash[:error] = "Update unsucessful. No changes were made."
+    end
+    redirect_to decks_path
+  end
+
   private
 
   def deck

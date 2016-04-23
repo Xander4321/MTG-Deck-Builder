@@ -9,6 +9,8 @@
         <th>Format</th>
         <th>Color(s)</th>
         <th>Card Total</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -29,10 +31,14 @@
         <td>
           <%= button_to "Delete", deck_path(deck), class:"button", method:"delete" %>
         </td>
+        <td>
+          <%= button_to "Edit", edit_deck_path(deck), class:"button", method:"get" %>
+        </td>
       </tr>
       <% end %>
     </tbody>
   </table>
 
+<h4>Add New Deck</h4>
   <%= render "form" %>
 </div>
