@@ -26,7 +26,12 @@
           Color of deck goes here.
         </td>
         <td>
-          <%= deck.cards.count %>/<%= deck.deckstyle.cardlmt %>
+          <% deckcards = Deckcard.where(deck_id: deck) %>
+          <% sum = 0 %>
+          <% deckcards.each do |j| %>
+            <% sum += j.num_of.to_i %>
+          <% end %>
+          <%= sum %>/<%= deck.deckstyle.cardlmt %>
         </td>
         <td>
           <%= button_to "Delete", deck_path(deck), class:"button", method:"delete" %>

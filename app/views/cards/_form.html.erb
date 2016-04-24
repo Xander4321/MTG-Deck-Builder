@@ -1,0 +1,11 @@
+<%= form_for @deckcard do |f| %>
+  <%= f.label :num_of, "# to add: " %>
+  <%= f.text_field :num_of %>
+
+  <%= f.label :deck_id, "Deck: " %>
+  <%= f.select(:deck_id, options_from_collection_for_select(@deck, 'id', 'name')) %>
+
+  <%= hidden_field_tag(:card_id, @card.id) %>
+
+  <%= f.submit "Submit", class: "button" %>
+<% end %>
