@@ -25,6 +25,14 @@
       <tr>
         <td>
           <%= card.num_of %>x
+
+          <%= form_tag("/deckcards/#{card.deckcards[0].id}", method: "patch") do %>
+            <%= label_tag(:num_of, "Change #") %>
+            <%= text_field_tag(:num_of, card.num_of ) %>
+            <%= hidden_field_tag(:deck_id, @deck.id) %>
+            <%= submit_tag("Update") %>
+          <% end %>
+
         </td>
         <td>
           <%= image_tag("#{card.image}", height: '50', width: '50') %>
