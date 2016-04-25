@@ -8,12 +8,13 @@ class DecksController < ApplicationController
   def show
     deck
     @cards = @deck.cards.select('cards.*, deckcards.num_of as num_of')
+    @deckcard = Deckcard.where deck: @deck
   end
 
   def create
     @deck = Deck.new(deck_params)
     if @deck.save
-      flash[:notice] = "Deck added successfully!"
+      flash[:notice] = "#{@deck.name} added successfully!"
     else
       flash[:error] = "Deck not added successfully! #{@deck.errors.full_messages.join ', '}."
     end

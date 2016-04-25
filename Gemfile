@@ -39,6 +39,8 @@ gem 'web-console', '~> 2.0', group: :development
 
 gem 'coveralls', require: false, group: :test
 
+gem 'launchy'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
