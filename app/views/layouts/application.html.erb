@@ -33,12 +33,22 @@
           <li class="menu-text">
             <%= link_to("Decks", decks_path) %>
           </li>
+          <li class="has-form">
+            <div class="row collapse">
+              <%= form_tag cards_path, method: "get" do %>
+              <div class="large-8 small-9 columns">
+                <%= text_field_tag :query, params[:query], placeholder: "Search Cards" %>
+              </div>
+              <%= submit_tag "Search", name: nil, class: "button expand"%>
+              <% end %>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
 
+    <%= render 'layouts/messages' %>
     <div class="row">
-      <%= render 'layouts/messages' %>
         <%= yield %>
     </div>
 

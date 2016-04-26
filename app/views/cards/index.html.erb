@@ -2,13 +2,6 @@
 
   <h1>Cards</h1>
 
-  <div class="search_bar">
-    <%= form_tag cards_path, method: "get" do %>
-      <%= text_field_tag :query, params[:query], placeholder: "Search Cards" %>
-      <%= submit_tag "Search", name: nil, class: "button"%>
-    <% end %>
-  </div>
-
   <table>
     <thead>
       <tr>
