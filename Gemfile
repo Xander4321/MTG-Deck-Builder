@@ -41,6 +41,8 @@ gem 'coveralls', require: false, group: :test
 
 gem 'launchy'
 
+gem 'pg_search'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
