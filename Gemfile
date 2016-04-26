@@ -43,6 +43,8 @@ gem 'launchy'
 
 gem 'pg_search'
 
+gem 'will_paginate', '~> 3.1.0'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 

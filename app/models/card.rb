@@ -33,4 +33,6 @@ class Card < ActiveRecord::Base
       search_name(query) + search_more(query)
     end
   end
+
+  self.per_page = 3
 end
