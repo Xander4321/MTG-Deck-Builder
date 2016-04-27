@@ -15,8 +15,26 @@ feature "User visits card index page" do
   let!(:timewalk) {Card.create(
     name: "Time Walk",
     color_identity: "Blue",
-    mana_cost: "BB",
+    mana_cost: "UU",
     cmc: 2,
+    type: type,
+    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
+    )}
+
+  let!(:bitterblossom) {Card.create(
+    name: "Bitterblossom",
+    color_identity: "Black",
+    mana_cost: "1U",
+    cmc: 2,
+    type: type,
+    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
+    )}
+
+  let!(:xenagos) {Card.create(
+    name: "Xenagos the Reveler",
+    color_identity: "Red Green",
+    mana_cost: "2RG",
+    cmc: 4,
     type: type,
     image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
     )}
@@ -35,7 +53,35 @@ feature "User visits card index page" do
     expect(page).to have_content "Blue"
     expect(page).to have_content "Mana Cost (CMC)"
     expect(page).to have_content "0 (0)"
-    expect(page).to have_content "BB (2)"
-    expect(page).to have_content("Artifact", count: 2)
+    expect(page).to have_content "UU (2)"
+    expect(page).to have_content("Artifact", count: 3)
+  end
+
+  scenario "sees paginated list of cards" do
+    visit cards_path
+
+    expect(page).to have_content "Thumbnail"
+    expect(page).to have_selector "img[src$='#{lotus.image}']"
+    expect(page).to have_selector "img[src$='#{timewalk.image}']"
+    expect(page).to have_content "Name"
+    expect(page).to have_content "Black Lotus"
+    expect(page).to have_content "Time Walk"
+    expect(page).to have_content "Color Identity"
+    expect(page).to have_content "Colorless"
+    expect(page).to have_content "Blue"
+    expect(page).to have_content "Mana Cost (CMC)"
+    expect(page).to have_content "0 (0)"
+    expect(page).to have_content "UU (2)"
+    expect(page).to have_content("Artifact", count: 3)
+
+    click_on "Next"
+
+    expect(page).to have_content "Name"
+    expect(page).to have_content "Xenagos the Reveler"
+    expect(page).to have_content "Color Identity"
+    expect(page).to have_content "Red Green"
+    expect(page).to have_content "Mana Cost (CMC)"
+    expect(page).to have_content "2RG (4)"
+    expect(page).to have_content "Artifact"
   end
 end
