@@ -18,9 +18,21 @@ class DeckcardsController < ApplicationController
     @deck = Deck.find(params[:deck_id])
     @deckcard = Deckcard.find(params[:id])
     if @deckcard.update(num_of: params[:num_of])
-      flash[:notice] = "Card # successfully updated!"
+      flash[:success] = "Card # successfully updated!"
     else
-      flash[:error] = "Something went wrong and card # was not updated."
+      flash[:alert] = "Something went wrong and card # was not updated."
+    end
+    redirect_to deck_path(@deck)
+  end
+
+  def destroy
+    @deckcard = Deckcard.find(params[:id])
+    @deck = Deck.find(@deckcard.deck_id)
+    @card = Card.find(@deckcard.card_id)
+    if @deckcard.destroy
+      flash[:notice] = "#{@card.name} removed from #{@deck.name}"
+    else
+      flash[:error] = "Something went wrong and #{@card.name} was not removed from #{@deck.name}."
     end
     redirect_to deck_path(@deck)
   end

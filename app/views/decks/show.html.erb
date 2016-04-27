@@ -30,8 +30,10 @@
             <%= label_tag(:num_of, "Change #") %>
             <%= text_field_tag(:num_of, card.num_of ) %>
             <%= hidden_field_tag(:deck_id, @deck.id) %>
-            <%= submit_tag("Update") %>
+            <%= submit_tag("Update", class:"button") %>
           <% end %>
+
+          <%= button_to "Remove", "/deckcards/#{card.deckcards[0].id}", class:"button", method:"delete" %>
 
         </td>
         <td>
