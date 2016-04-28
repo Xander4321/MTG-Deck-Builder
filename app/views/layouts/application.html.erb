@@ -38,14 +38,18 @@
             <li class="menu-text">
               <%= link_to("Decks", decks_path) %>
             </li>
-            <div class="column small-9">
-              <%= form_tag cards_path, method: "get" do %>
-                  <%= text_field_tag :query, params[:query], placeholder: "Search Cards", class:"postfix" %>
+            <li class="has-form">
+              <%= form_tag cards_path, method: :get do %>
+                <div class="row collapse">
+                  <div class="column small-9">
+                    <%= text_field_tag :query, params[:query], placeholder: "Search Cards" %>
+                  </div>
+                  <div class="column small-3">
+                    <%= submit_tag "Search", name: nil, class: "button"%>
+                  </div>
                 </div>
-                <div class="column small-3">
-                  <%= submit_tag "Search", name: nil, class: "button"%>
               <% end %>
-            </div>
+            </li>
           </ul>
         </div>
       </div>

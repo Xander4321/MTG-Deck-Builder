@@ -38,6 +38,22 @@ feature "User visits home page" do
     type: type,
     image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
     )}
+  let!(:timewalkaaaa) {Card.create(
+    name: "AAAA Time Walk",
+    color_identity: "Blue",
+    mana_cost: "BB",
+    cmc: 2,
+    type: type,
+    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
+    )}
+  let!(:timewalkaaaaa) {Card.create(
+    name: "AAAAA Time Walk",
+    color_identity: "Blue",
+    mana_cost: "BB",
+    cmc: 2,
+    type: type,
+    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
+    )}
   scenario "searches for a card" do
     visit cards_path
 
@@ -45,6 +61,8 @@ feature "User visits home page" do
     expect(page).to have_content 'A Time Walk'
     expect(page).to have_content 'AA Time Walk'
     expect(page).to have_content 'AAA Time Walk'
+    expect(page).to have_content 'AAAA Time Walk'
+    expect(page).to have_content 'AAAAA Time Walk'
 
     fill_in 'query', with: 'Black Lotus'
     click_on 'Search'
@@ -53,5 +71,7 @@ feature "User visits home page" do
     expect(page).to_not have_content 'A Time Walk'
     expect(page).to_not have_content 'AA Time Walk'
     expect(page).to_not have_content 'AAA Time Walk'
+    expect(page).to_not have_content 'AAAA Time Walk'
+    expect(page).to_not have_content 'AAAAA Time Walk'
   end
 end
