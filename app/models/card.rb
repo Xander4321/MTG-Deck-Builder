@@ -34,5 +34,5 @@ class Card < ActiveRecord::Base
     end
   end
 
-  self.per_page = 3
+  self.per_page = 5
 end

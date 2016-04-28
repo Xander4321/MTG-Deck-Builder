@@ -7,7 +7,6 @@
       <tr>
         <th>Name</th>
         <th>Format</th>
-        <th>Color(s)</th>
         <th>Card Total</th>
         <th></th>
         <th></th>
@@ -21,9 +20,6 @@
         </td>
         <td>
           <%= deck.deckstyle.name %>
-        </td>
-        <td>
-          Color of deck goes here.
         </td>
         <td>
           <% deckcards = Deckcard.where(deck_id: deck) %>

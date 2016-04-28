@@ -21,7 +21,25 @@ feature "User visits card index page" do
     image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
     )}
 
-  let!(:bitterblossom) {Card.create(
+  let!(:bitterblossom1) {Card.create(
+    name: "Bitterblossom",
+    color_identity: "Black",
+    mana_cost: "1U",
+    cmc: 2,
+    type: type,
+    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
+    )}
+
+  let!(:bitterblossom2) {Card.create(
+    name: "Bitterblossom",
+    color_identity: "Black",
+    mana_cost: "1U",
+    cmc: 2,
+    type: type,
+    image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383131&type=card"
+    )}
+
+  let!(:bitterblossom3) {Card.create(
     name: "Bitterblossom",
     color_identity: "Black",
     mana_cost: "1U",
@@ -54,7 +72,7 @@ feature "User visits card index page" do
     expect(page).to have_content "Mana Cost (CMC)"
     expect(page).to have_content "0 (0)"
     expect(page).to have_content "UU (2)"
-    expect(page).to have_content("Artifact", count: 3)
+    expect(page).to have_content("Artifact", count: 5)
   end
 
   scenario "sees paginated list of cards" do
@@ -72,7 +90,7 @@ feature "User visits card index page" do
     expect(page).to have_content "Mana Cost (CMC)"
     expect(page).to have_content "0 (0)"
     expect(page).to have_content "UU (2)"
-    expect(page).to have_content("Artifact", count: 3)
+    expect(page).to have_content("Artifact", count: 5)
 
     click_on "Next"
 

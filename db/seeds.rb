@@ -44,7 +44,8 @@ subtypes = Subtype.create([
     { sbtypname: "Swamp" },
     { sbtypname: "Mountain" },
     { sbtypname: "Forest" },
-    { sbtypname: "Xenagos" }
+    { sbtypname: "Xenagos" },
+    { sbtypname: "Cat Warrior" }
 ])
 
 artists = Artist.create([
@@ -52,7 +53,12 @@ artists = Artist.create([
     { name: "Aleksi Briclot", gender: "Male" },
     { name: "Jason Chan", gender: "Male" },
     { name: "Michael Bruinsma", gender: "Male" },
-    { name: "Rebecca Guay", gender: "Female" }
+    { name: "Rebecca Guay", gender: "Female" },
+    { name: "Wayne Reynolds", gender: "Male" },
+    { name: "Vincent Proce", gender: "Male" },
+    { name: "Christopher Moeller", gender: "Male" },
+    { name: "Lucas Graciano", gender: "Male" },
+    { name: "Igor Kieryluk", gender: "Male" }
 ])
 
 expantions = Expantion.create([
@@ -70,7 +76,13 @@ expantions = Expantion.create([
   total: 249 },
   { name: "Modern Masters 2015",
   symbol: "http://hydra-media.cursecdn.com/mtgsalvation.gamepedia.com/thumb/5/5f/MM2_symbol.png/28px-MM2_symbol.png?version=f380c40c5d772ff2ff152bccfb18ef9f",
-  total: 249 }
+  total: 249 },
+  { name: "Battle For Zendicar",
+  symbol: "http://media.wizards.com/2015/dftyuvbd564776rvf/FEAT20150309_a7w0qe6lfk.png",
+  total: 299 },
+  { name: "Conspiracy",
+  symbol: "http://vignette2.wikia.nocookie.net/mtg/images/5/54/Symbol_Conspiracy.png/revision/latest?cb=20140718104657",
+  total: 210 }
 ])
 
 rarities = Rarity.create([
@@ -185,6 +197,105 @@ Card.create(
   artist: artists[4],
   expantion: expantions[4],
   number: 71
+)
+
+Card.create(
+  name: "Wild Nacatl",
+  color_identity: "Green",
+  mana_cost: "G",
+  cmc: 1,
+  rarity: rarities[0],
+  rules_text: %(
+  Wild Nacatl gets +1/+1 as long as you control a Mountain.
+  Wild Nacatl gets +1/+1 as long as you control a Plains.
+  ),
+  flavor_text: %(
+  The Cloud Nacatl sit and think, a bunch of soft paws. We are the Claws of Marisi, stalking, pouncing, drawing blood.
+  ),
+  image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=174989&type=card",
+  power: 1,
+  toughness: 1,
+  type: types[1],
+  subtype: subtypes[16],
+  artist: artists[5],
+  expantion: expantions[3],
+  number: 152
+)
+Card.create(
+  name: "Island",
+  color_identity: "Blue",
+  cmc: 0,
+  rarity: rarities[0],
+  rules_text: %(
+  U
+  ),
+  image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=401927&type=card",
+  supertype: supertypes[1],
+  type: types[4],
+  subtype: subtypes[11],
+  artist: artists[6],
+  expantion: expantions[5],
+  number: 258
+)
+
+Card.create(
+  name: "Lightning Bolt",
+  color_identity: "Red",
+  mana_cost: "R",
+  cmc: 1,
+  rarity: rarities[1],
+  rules_text: %(
+  Lightning Bolt deals 3 damage to target creature or player.
+  ),
+  flavor_text: %(
+  The sparkmage shrieked, calling on the rage of the storms of his youth. To his surprise, the sky responded with a fierce energy he'd never thought to see again.
+  ),
+  image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397722&type=card",
+  type: types[3],
+  artist: artists[7],
+  expantion: expantions[4],
+  number: 122
+)
+
+Card.create(
+  name: "Thoughtseize",
+  color_identity: "Black",
+  mana_cost: "B",
+  cmc: 1,
+  rarity: rarities[2],
+  rules_text: %(
+  Target player reveals his or her hand. You choose a nonland card from it. That player discards that card. You lose 2 life.
+  ),
+  flavor_text: %(
+  "Knowledge is such a burden. Release it. Release all your fears to me."
+  —Ashiok, Nightmare Weaver
+  ),
+  image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373632&type=card",
+  type: types[6],
+  artist: artists[8],
+  expantion: expantions[2],
+  number: 107
+)
+
+Card.create(
+  name: "Rout",
+  color_identity: "White",
+  mana_cost: "3WW",
+  cmc: 5,
+  rarity: rarities[2],
+  rules_text: %(
+  You may cast Rout as though it had flash if you pay 2 more to cast it. (You may cast it any time you could cast an instant.)
+  Destroy all creatures. They can't be regenerated.
+  ),
+  flavor_text: %(
+  "End this. What I seek is far greater."
+  —Elesh Norn, Grand Cenobite
+  ),
+  image: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382349&type=card",
+  type: types[6],
+  artist: artists[9],
+  expantion: expantions[6],
+  number: 80
 )
 
 Deck.create(
