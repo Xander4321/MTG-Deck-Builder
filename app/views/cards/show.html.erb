@@ -1,81 +1,92 @@
-<li>
-  <%= image_tag("#{@card.image}") %>
-</li>
+<div class="row row-padding">
+  <div class="column small-12 medium-3">
+    <!-- <div class="callout secondary"> -->
+        <%= image_tag("#{@card.image}") %>
+    <!-- </div> -->
+  </div>
 
-<h1> <%= @card.name %> </h1>
+  <div class="column small-12 medium-6 end">
+    <div class="callout secondary">
+      <h1>
+        <%= @card.name %>
+      </h1>
+      <ul>
+        <li>
+          <b> Type: </b>
+          <% if !@card.supertype.nil? %>
+            <%= @card.supertype.sptypname %>
+          <% end %>
 
-<li>
-  Type:
-  <% if !@card.supertype.nil? %>
-    <%= @card.supertype.sptypname %>
-  <% end %>
+          <%= @card.type.typname %>
 
-  <%= @card.type.typname %>
+          <% if !@card.subtype.nil? %>
+            -
+            <%= @card.subtype.sbtypname %>
+          <% end %>
+        </li>
 
-  <% if !@card.subtype.nil? %>
-    -
-    <%= @card.subtype.sbtypname %>
-  <% end %>
-</li>
+        <li>
+          <b> Casting Cost (CMC): </b>
+          <%= @card.mana_cost %>
+          (<%= @card.cmc %>)
+        </li>
 
-<li>
-  Casting Cost (CMC):
-  <%= @card.mana_cost %>
-  (<%= @card.cmc %>)
-</li>
+        <li>
+          <b> Color Identity: </b>
+          <%= @card.color_identity %>
+        </li>
 
-<li>
-  Color Identity:
-  <%= @card.color_identity %>
-</li>
+        <li>
+          <b> Rarity: </b>
+          <%= @card.rarity.value %>
+        </li>
 
-<li>
-  Rarity:
-  <%= @card.rarity.value %>
-</li>
+        <% if !@card.rules_text.nil? %>
+          <li>
+            <b> Rules Text: </b>
+            <%= @card.rules_text %>
+          </li>
+        <% end %>
 
-<% if !@card.rules_text.nil? %>
-  <li>
-    Rules Text:
-    <%= @card.rules_text %>
-  </li>
-<% end %>
+        <% if !@card.flavor_text.nil? %>
+          <li>
+            <b> Flavor Text: </b>
+            <%= @card.flavor_text %>
+          </li>
+        <% end %>
 
-<% if !@card.flavor_text.nil? %>
-  <li>
-    Flavor Text:
-    <%= @card.flavor_text %>
-  </li>
-<% end %>
+        <% if !@card.power.nil? && !@card.toughness.nil? %>
+          <li>
+            <b> Power/Toughness: </b>
+            <%= @card.power %>/<%= @card.toughness %>
+          </li>
+        <% end %>
 
-<% if !@card.power.nil? && !@card.toughness.nil? %>
-  <li>
-    Power/Toughness:
-    <%= @card.power %>/<%= @card.toughness %>
-  </li>
-<% end %>
+        <% if !@card.loyalty.nil? %>
+          <li>
+            <b> Loyalty: </b>
+            <%= @card.loyalty %>
+          </li>
+        <% end %>
 
-<% if !@card.loyalty.nil? %>
-  <li>
-    Loyalty:
-    <%= @card.loyalty %>
-  </li>
-<% end %>
+        <li>
+          <b> Set: </b>
+          <%= @card.expantion.name %>
+          <%= image_tag("#{@card.expantion.symbol}", height: '35', width: '35') %>
+        </li>
 
-<li>
-  Set:
-  <%= @card.expantion.name %>
-  <%= image_tag("#{@card.expantion.symbol}", height: '35', width: '35') %>
-</li>
+        <li>
+          <b> Card Number: </b>
+          <%= @card.number %>/<%= @card.expantion.total %>
+        </li>
 
-<li>
-  Card Number:
-  <%= @card.number %>/<%= @card.expantion.total %>
-</li>
-
-<li>
-  Artist:
-  <%= @card.artist.name %>
-</li>
+        <li>
+          <b> Artist: </b>
+          <%= @card.artist.name %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <%= render "form" %>
