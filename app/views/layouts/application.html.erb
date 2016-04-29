@@ -24,7 +24,7 @@
             <%= image_tag("http://img08.deviantart.net/cf8d/i/2011/170/6/b/magic_the_gathering_dotp_2012_by_jenack-d3jcych.png", height: '60', width: '60') %>
           </li>
           <li class="menu-text">
-            <%= link_to("MTG Deck Builder", root_path, class:"font-magic font-23px") %>
+            <%= link_to("MTG Deck Builder", root_path, class:"font-magic font-23px topbar-color") %>
           </li>
         </ul>
       </div>
@@ -33,10 +33,10 @@
         <div class="top-bar-right">
           <ul class="menu">
             <li class="menu-text">
-              <%= link_to("Cards", cards_path) %>
+              <%= link_to("Cards", cards_path, class:"topbar-color") %>
             </li>
             <li class="menu-text">
-              <%= link_to("Decks", decks_path) %>
+              <%= link_to("Decks", decks_path, class:"topbar-color") %>
             </li>
             <li class="has-form">
               <%= form_tag cards_path, method: :get do %>
